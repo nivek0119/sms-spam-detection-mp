@@ -14,7 +14,7 @@ if (messagez!=""):
     df.head()
     qq = df.shape
     df.info()
-    
+
     print(df['v2'].apply(lambda x: len(x.split(' '))).sum())
     df.drop(['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4'], axis=1, inplace=True)
     df.head()
