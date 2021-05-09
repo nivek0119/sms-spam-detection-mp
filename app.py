@@ -1,5 +1,4 @@
 import streamlit as st
-import numpy as np
 import pandas as pd
 
 st.title("SMS SPAM DETECTION")
@@ -8,22 +7,13 @@ messagez=st.text_input("Enter SMS Below")
 print("start")
 
 if (messagez!=""):
-    import pandas as pd
-    import seaborn as sns
     df = pd.read_csv("spam.csv",encoding='latin-1')
-
-    
 
     df.drop(['Unnamed: 2', 'Unnamed: 3', 'Unnamed: 4'], axis=1, inplace=True)
 
     df.rename(columns={'v1': 'label', 'v2': 'message'}, inplace=True)
 
     spam = df[df["label"] == "spam"]
-    spam.head()
-
-
-    import seaborn as sns
-    import matplotlib.pyplot as plt
 
     df['label'] = df['label'].map({'ham':0, 'spam':1})
 
