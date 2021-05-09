@@ -2,9 +2,9 @@ import streamlit as st
 import numpy as np
 import pandas as pd
 
-st.title("streamlit")
+st.title("SMS SPAM DETECTION")
 
-messagez=st.text_input("input")
+messagez=st.text_input("Enter SMS Below")
 print("start")
 
 if (messagez!=""):
@@ -115,7 +115,10 @@ if (messagez!=""):
     predict = gs_clf.predict(message)
     print(predict[0])
     ans = predict[0]
-    st.title(ans)
+    if (ans=="spam"):
+        st.title("OH NO IT'S A SPAM MESSAGE !!!")
+    else :
+        st.title("STAY CALM ITS A MESSAGE")
 
 else :
     st.title("enter a messge to check")
